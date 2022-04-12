@@ -17,8 +17,10 @@ public class Main {
         generator.limit(30).forEach(list::add);
 
         list.stream()
-                .sorted()
+                .sorted((o1, o2) -> o1.compare(o2, o1))
                 .forEach(System.out::println);
+
+        System.out.println();
 
         list.stream()
                 .filter((log) -> log.Count < 100)
